@@ -1,0 +1,24 @@
+{
+  "name": "mark-it-down",
+  "version": "1.0.0",
+  "description": "A nice markdown editor :)",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrikj31/Mark-It-Down.git"
+  },
+  "author": "fredrikj31",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredrikj31/Mark-It-Down/issues"
+  },
+  "homepage": "https://github.com/fredrikj31/Mark-It-Down#readme"
+}
