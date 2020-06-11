@@ -9,7 +9,7 @@ http.listen(port, () => {
 io.on("connection", (socket) => {
 	console.log("A user connected.");
 	socket.on("message", (event) => {
-		console.log(`${socket.id} said: ${event.char}`);
+		console.log(`${socket.id} said: ${event.char}. At ${event.position}`);
 		socket.broadcast.emit("message", event);
 	});
 });
