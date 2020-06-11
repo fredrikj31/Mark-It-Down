@@ -7,13 +7,23 @@ http.listen(port, () => {
 });
 
 io.on("connection", (socket) => {
-	console.log("A user connected.");
-	socket.on("message", (event) => {
-		console.log(`${socket.id} said: ${event.char}. At ${event.position}`);
-		socket.broadcast.emit("message", event);
+	console.log(`Socket Id: (${socket.id}) joined`);
+	
+	// Insert Event
+	socket.on("insert", (event) => {
+		//console.log(`${socket.id} typed: ${event.char}. At ${event.position}`);
+		socket.broadcast.emit("insert", event);
 	});
-});
 
-io.on("disconnect", (socket) => {
-	console.log("A user disconnected.");
-})
+	// Delete Event
+	socket.on("delete", (event) => {
+		//console.log(`${socket.id} deleted at ${event.position}`);
+		socket.broadcast.emit("delete", event);
+	});
+
+
+	// Disconnect Event
+	socket.on("disconnect", () => {
+		console.log(`Socket Id: (${socket.id}) left`);
+	})
+});
